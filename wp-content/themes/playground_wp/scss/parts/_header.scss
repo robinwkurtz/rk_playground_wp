@@ -1,0 +1,16 @@
+.header {
+	padding: $site-gutter 0;
+
+	width: 100%;
+
+	border-bottom: 1px solid $color-main;
+
+	z-index: 2;
+	.logo-link {
+		display: inline-block;
+		.svg-logo {
+			width: 133px;
+			height: auto;
+		}
+	}
+}

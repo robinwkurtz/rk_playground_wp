@@ -1,0 +1,285 @@
+h1 {
+	font-size: $font-size-header-small;
+	line-height: $font-size-header;
+	@media #{$medium-up} {
+		font-size: $font-size-header;
+		line-height: $font-size-header;
+	}
+	@media #{$xlarge-up} {
+		font-size: $font-size-header-large;
+		line-height: $font-size-header-large;
+	}
+}
+
+h2 {
+	font-size: $font-size-body-large;
+	@media #{$medium-up} {
+		font-size: $font-size-header-small;
+	}
+	@media #{$xlarge-up} {
+		font-size: $font-size-header;
+	}
+}
+
+h3 {
+	font-size: $font-size-body-large;
+	@media #{$medium-up} {
+		font-size: $font-size-header-small;
+	}
+
+	font-weight: normal;
+}
+
+h4 {
+	font-size: $font-size-body-small;
+}
+
+h5 {
+	font-size: $font-size-body;
+}
+
+h2, h3, h4, h5, h6 {
+	line-height: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $color-main;
+
+	font-family: $font-header;
+
+	letter-spacing: 0.05em;
+
+	@include transition(all 0.2s ease);
+
+	&.underlined {
+		display: inline-block;
+		border-bottom: 3px solid $color-main;
+	}
+}
+
+p, ul li, ol li {
+	font-size: $font-size-body-small;
+
+	letter-spacing: 0.05em;
+
+	@media #{$medium-up} {
+		font-size: $font-size-body;
+	}
+}
+
+ul {
+	&.inline-list {
+		margin: 0 -$site-gutter/6;
+		li {
+			display: inline-block;
+			margin: $site-gutter/6;
+		}
+	}
+	&.large-list {
+		margin: $site-gutter 0;
+		> li {
+			font-size: $font-size-body-large;
+			@media #{$medium-up} {
+				font-size: $font-size-header-small;
+			}
+			margin: $site-gutter/2 0;
+			padding-bottom: $site-gutter/2;
+		}
+	}
+	&.seperated-list {
+		> li {
+			border-bottom: 1px solid rgba($color-main, .25);
+		}
+	}
+	&.arrowed-list {
+		> li {
+			display: block;
+    		width: 100%;
+
+			font-family: $font-body;
+
+			&:before {
+				float: right;
+				font-family: $font-icon;
+			}
+
+			@extend .fa;
+			@extend .fa-long-arrow-right;
+		}
+	}
+	&.condensed {
+		li {
+			margin: 0;
+		}
+	}
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	+ p, + h1, + h2, + h3, + h4, + h5, + h6, + ul {
+		margin: $site-gutter*.75 0;
+	}
+}
+
+ul {
+	+ h1, + h2, + h3, + h4, + h5, + h6 {
+		margin-top: $site-gutter;
+	}
+}
+
+.bulleted {
+	padding-left: 30px;
+	> i {
+		float: left;
+		margin-left: -30px;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+.content {
+	a, .link {
+		color: inherit;
+
+		text-decoration: none;
+
+		&:not(.btn) {
+			border-bottom: 1px solid $color-main
+		}
+
+		@include transition(all 0.2s ease);
+
+		&:hover {
+			@include transition(all 0.2s ease);
+		}
+
+		&.btn {
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+	strong {
+		font-size: 90%;
+		font-weight: 900;
+		letter-spacing: 0.05em;
+	}
+
+	// h1 {
+	// 	font-size: $font-size-header-small;
+	// }
+	//
+	// h2, h3, h4 {
+	// 	font-size: $font-size-body-large;
+	// }
+
+	h5 {
+		margin-bottom: 0;
+		+ p {
+			margin-top: 0;
+		}
+	}
+
+	> .inner-content {
+		padding: $site-gutter*2 $site-gutter $site-gutter;
+		@media #{$medium-up} {
+			padding: $site-gutter*6 $site-gutter*3 $site-gutter*3;
+		}
+
+		+ .inner-content {
+			padding-top: 0;
+		}
+	}
+
+}
+
+.icon-link {
+	display: inline-block;
+	i {
+		margin-bottom: 5px;
+	}
+	span {
+		border-bottom: 1px solid $color-main;
+		color: $color-main;
+	}
+}
+
+.text-header {
+	font-family: $font-header;
+}
+
+.text-body {
+	font-family: $font-body;
+}
+
+.text-light {
+	font-weight: 400;
+}
+
+.text-upper {
+	text-transform: uppercase;
+}
+
+.text-small {
+	font-size: $font-size-body-small;
+}
+
+.text-small-upper {
+	font-size: $font-size-body-small;
+	text-transform: uppercase;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+// Alignment
+
+.align-left {
+	text-align: left;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+// Icons (Font Awesome)
+
+.fa {
+	&.color-alt {
+		&:before {
+			color: $color-alt;
+		}
+	}
+}
+
+// Editor
+
+.editor {
+	display: inline-block;
+	font-size: $font-size-body-small;
+
+	border: 0 none !important;
+
+	color: $color-main;
+
+	text-decoration: none;
+
+	line-height: normal;
+	vertical-align: middle;
+
+	&:before {
+		vertical-align: middle;
+		margin-right: 5px;
+	}
+}

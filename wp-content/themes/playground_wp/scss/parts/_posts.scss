@@ -1,0 +1,14 @@
+.peep-block {
+	.block-link {
+		text-decoration: none;
+	}
+	.block-image {
+		background-size: cover;
+		background-position: top center;
+	}
+	.block-title {
+		margin-top: 5px;
+
+		color: $color-body;
+	}
+}

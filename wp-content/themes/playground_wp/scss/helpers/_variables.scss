@@ -1,0 +1,51 @@
+// Color
+
+$color-white: #FFF;
+$color-lt-gray: #EEE;
+$color-gray: #CCC;
+$color-dk-gray: #4C494A;
+$color-black: #000;
+
+$color-body: $color-dk-gray;
+$color-main: $color-black;
+$color-alt: $color-gray;
+
+$color-error: #FA2326;
+$color-success: #78D287;
+
+// Fonts
+
+$font-montserrat: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-varela: 'Varela Round', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-icon: 'FontAwesome', sans-serif;
+
+$font-round: $font-varela;
+$font-header: $font-montserrat;
+$font-body: $font-montserrat;
+
+$font-size-header-large: 72px;
+$font-size-header: 48px;
+$font-size-header-small: 36px;
+$font-size-body-large: 24px;
+$font-size-body: 18px;
+$font-size-body-small: 16px;
+
+// Structure
+
+$site-gutter: 24px;
+$site-width: 1024px;
+$site-min-width: 320px;
+$menu-width: 360px;
+
+
+// Base Body Styles
+
+html,
+body {
+    min-width: $site-min-width;
+    color: $color-body;
+    font-family: $font-body;
+    @include box-sizing(border-box);
+    @include font-smoothing;
+    line-height: 1.5;
+}

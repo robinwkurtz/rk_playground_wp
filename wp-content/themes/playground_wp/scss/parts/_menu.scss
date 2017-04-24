@@ -1,0 +1,143 @@
+body {
+	position: relative;
+	&.is-active {
+		.menu-container {
+			right: 0;
+			@include transition(all, 0.5s, ease);
+		}
+	}
+}
+
+.menu-main {
+	.menu-button {
+		color: $color-main;
+		.burger {
+			@include burger(38px, 5px, 6px, $color-main, 6px, .3s);
+		}
+	}
+}
+
+.menu-button {
+	display: inline-block;
+
+	color: $color-white;
+
+	font-size: 13px;
+
+	text-decoration: none;
+
+	.burger {
+		margin-top: 4px;
+		@include burger(38px, 5px, 6px, $color-white, 6px, .3s);
+	}
+
+	&.closed {
+		.burger{
+			@include burger-to-cross(6px, 5px);
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.menu-container {
+	position: fixed;
+
+	top: 0;
+	@media #{$medium-up} {
+		right: -$menu-width;
+	}
+	right: -320px;
+	bottom: 0;
+	left: auto;
+
+	@include box-sizing();
+
+	@media #{$medium-up} {
+		width: $menu-width;
+	}
+	width: 320px;
+	height: 100%;
+
+	padding: 0 $site-gutter;
+
+	background-color: $color-alt;
+
+	color: $color-white;
+	a {
+		color: inherit;
+	}
+
+	text-align: center;
+
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
+	z-index: 5;
+
+	@include transition(all, 0.5s, ease);
+
+	.social-list {
+		a {
+			color: $color-white;
+		}
+	}
+
+	.menu-button {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		margin: $site-gutter;
+		&.closed {
+			.burger {
+				&:before,
+				&:after {
+					background-color: $color-white;
+				}
+			}
+		}
+	}
+
+	@extend .table;
+
+	> .menu-inner {
+		@extend .table-cell;
+		@extend .middle;
+	}
+
+	.header-block {
+		a, h1, h2, h3, h4, h5, h6, p, span {
+			color: $color-alt;
+			border-color: $color-alt;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-family: $font-round;
+		}
+	}
+
+	ul.menu {
+		margin: $site-gutter;
+
+		> li {
+			margin: $site-gutter 0;
+			> a {
+				color: inherit;
+
+				font-size: $font-size-body-large;
+
+				font-weight: 700;
+
+				text-decoration: none;
+			}
+
+			.sub-menu {
+				display: none;
+				padding-left: $site-gutter/2;
+			}
+
+		}
+	}
+}

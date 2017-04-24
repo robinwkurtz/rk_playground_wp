@@ -1,0 +1,7 @@
+.htaccess
+/swap
+/wp-config.php
+/wp-config.env.php
+/wp-config.default.php
+/wp-config.local.php
+/wp-config.production.php

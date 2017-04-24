@@ -1,0 +1,66 @@
+.form,
+form {
+
+	.input-wrapper {
+		position: relative;
+
+		@extend .row;
+
+		> .column,
+		> .columns {
+			margin-bottom: $site-gutter;
+		}
+
+		input, textarea {
+			width: 100%;
+
+			padding: $site-gutter/2;
+
+			background-color: transparent;
+			border: 1px solid $color-white;
+			color: $color-white;
+
+			font-family: $font-body;
+			font-weight: 600;
+			font-size: 100%;
+
+			@include appearance(none);
+			@include box-sizing(border-box);
+			@include transition(all 0.2s ease);
+
+			&:focus, &:hover {
+				background-color: rgba($color-main, .5);
+				outline: 0;
+				@include transition(all 0.2s ease);
+			}
+
+			@include placeholder {
+				color: rgba($color-white, .75);
+				opacity: 1;
+			}
+
+		}
+
+		textarea {
+			resize: vertical;
+			min-height: 150px;
+			max-height: 350px;
+		}
+
+		label {
+			&.error {
+				display: block;
+				margin-top: $site-gutter/4;
+
+				font-weight: 600;
+			}
+		}
+
+		input[type="submit"],
+		button[type="submit"] {
+			@extend .btn;
+		}
+
+	}
+
+}
